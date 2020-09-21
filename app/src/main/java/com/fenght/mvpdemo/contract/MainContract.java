@@ -2,6 +2,8 @@ package com.fenght.mvpdemo.contract;
 
 import com.fenght.mvpdemo.base.IBasePresenter;
 import com.fenght.mvpdemo.base.IBaseView;
+import com.fenght.mvpdemo.bean.BannerBean;
+import com.fenght.mvpdemo.http.ProgressObserver;
 
 /**
  * @author fht
@@ -9,12 +11,12 @@ import com.fenght.mvpdemo.base.IBaseView;
  */
 public interface MainContract {
     interface IMainModel{
-        void requestData();
+        void requestData(String type, ProgressObserver progressObserver);
     }
 
     interface IMainView extends IBaseView {
         void showDialog();
-        void succesMsg();
+        void succesData(BannerBean bannerBean);
     }
 
     interface IMainPresenter extends IBasePresenter {

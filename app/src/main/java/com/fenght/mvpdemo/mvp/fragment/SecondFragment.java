@@ -1,4 +1,4 @@
-package com.fenght.mvpdemo.main.fragment;
+package com.fenght.mvpdemo.mvp.fragment;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -8,7 +8,7 @@ import com.fenght.mvpdemo.R;
 import com.fenght.mvpdemo.base.BaseFragment;
 import com.fenght.mvpdemo.contract.SecondContract;
 import com.fenght.mvpdemo.inject.InjectPresenter;
-import com.fenght.mvpdemo.main.presenter.SecondPresenter;
+import com.fenght.mvpdemo.mvp.presenter.SecondPresenter;
 
 import androidx.annotation.Nullable;
 

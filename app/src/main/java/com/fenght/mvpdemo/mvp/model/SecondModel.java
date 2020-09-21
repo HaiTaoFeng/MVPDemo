@@ -1,4 +1,4 @@
-package com.fenght.mvpdemo.main.model;
+package com.fenght.mvpdemo.mvp.model;
 
 import com.fenght.mvpdemo.base.BaseModel;
 import com.fenght.mvpdemo.contract.SecondContract;

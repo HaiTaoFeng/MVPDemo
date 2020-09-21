@@ -1,9 +1,9 @@
-package com.fenght.mvpdemo.main.view;
+package com.fenght.mvpdemo.mvp.activity;
 
 import android.os.Bundle;
 
 import com.fenght.mvpdemo.R;
-import com.fenght.mvpdemo.main.fragment.SecondFragment;
+import com.fenght.mvpdemo.mvp.fragment.SecondFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 

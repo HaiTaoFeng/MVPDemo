@@ -7,5 +7,5 @@
     android:clipToPadding="false"
     android:paddingBottom="@dimen/list_item_spacing_half"
     android:paddingTop="@dimen/list_item_spacing_half"
-    tools:context=".main.fragment.ItemListDialogFragment"
+    tools:context=".mvp.fragment.ItemListDialogFragment"
     tools:listitem="@layout/fragment_item_list_dialog_list_dialog_item"/>

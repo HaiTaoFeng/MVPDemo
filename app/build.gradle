@@ -33,8 +33,41 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
     implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'  //解决线程调度问题
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    //okhttp3
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1' //配置缓存策略
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 }
+
+//加入的代码从这里开始
+task clearJar(type: Delete) {
+    delete('libs/log.jar')
+}
+task makeJar(type: org.gradle.api.tasks.bundling.Jar) {
+    //指定生成的jar名称
+    baseName 'log'
+    //从哪里打包class文件
+    from('build/intermediates/javac/debug/classes/com/fenght/mvpdemo/test/')
+    //打包到jar后的目录结构
+    into('com/fenght/mvpdemo/test/')
+    //去掉不需要打包的目录和文件
+    exclude('text/', 'BuildConfig.class', 'App.class', 'BlockContext.class')
+    exclude {
+        it.name.startsWith('R$');
+    }
+}
+makeJar.dependsOn(clearJar, build)
+

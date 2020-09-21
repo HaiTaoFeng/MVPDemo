@@ -1,16 +1,19 @@
-package com.fenght.mvpdemo.main.view;
+package com.fenght.mvpdemo.mvp.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fenght.mvpdemo.R;
 import com.fenght.mvpdemo.base.BaseActivity;
+import com.fenght.mvpdemo.bean.BannerBean;
 import com.fenght.mvpdemo.contract.MainContract;
 import com.fenght.mvpdemo.inject.InjectPresenter;
-import com.fenght.mvpdemo.main.presenter.MainPresenter;
+import com.fenght.mvpdemo.mvp.presenter.MainPresenter;
+
+import java.util.List;
 
 import androidx.annotation.Nullable;
 
@@ -43,15 +46,18 @@ public class MainActivity extends BaseActivity implements MainContract.IMainView
     }
 
     @Override
-    public void succesMsg() {
+    public void succesData(BannerBean bannerBean) {
         tv_text.setText("请求成功！");
+        List<BannerBean.DataBean> list = bannerBean.getData();
+        for (BannerBean.DataBean dataBean:list) {
+            Log.e("fht","数据" + dataBean.getTitle());
+        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_text:
-                startActivity(new Intent(MainActivity.this,SecondActivity.class));
                 break;
         }
     }

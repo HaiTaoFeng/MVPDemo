@@ -1,4 +1,4 @@
-package com.fenght.mvpdemo.main.fragment;
+package com.fenght.mvpdemo.mvp.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
