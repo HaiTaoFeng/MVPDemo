@@ -48,7 +48,7 @@ public class ProgressObserver<T> implements Observer<T>,
 
     @Override
     public void onError(Throwable e) {
-
+        observerListener.onError(e.getMessage());
     }
 
     @Override

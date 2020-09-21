@@ -55,6 +55,11 @@ public class MainActivity extends BaseActivity implements MainContract.IMainView
     }
 
     @Override
+    public void errorMsg(String msg) {
+        tv_text.setText("请求失败：" + msg);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_text:

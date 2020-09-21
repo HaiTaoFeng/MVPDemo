@@ -7,4 +7,5 @@ package com.fenght.mvpdemo.http;
  */
 public interface ObserverListener<T> {
    void OnNext(T t);
+   void onError(String msg);
 }

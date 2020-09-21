@@ -42,6 +42,11 @@ public class MainPresenter extends BasePresenter<MainContract.IMainView, MainMod
                 //将数据传到Activity
                 getView().succesData(bannerBean);
             }
+
+            @Override
+            public void onError(String msg) {
+                getView().errorMsg(msg);
+            }
         };
         getModel().requestData("json",new ProgressObserver(observerListener,getView().getContext()));
     }
