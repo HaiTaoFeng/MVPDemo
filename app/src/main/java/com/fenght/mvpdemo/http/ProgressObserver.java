@@ -5,6 +5,13 @@ import android.content.Context;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
+/**
+ * 封装实现Observer方法，只监听onNext和onError方法
+ * 并带有加载框
+ * @author fenghaitao
+ * @time 2020年9月23日13:44:37
+ * @param <T>
+ */
 public class ProgressObserver<T> implements Observer<T>,
         ProgressDialogHandler.ProgressCancleListener {
 
